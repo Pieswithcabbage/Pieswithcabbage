@@ -5,11 +5,16 @@ on:
     - cron: "0 */12 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       
       - uses: Platane/snk@v3
         id: snake-gif
@@ -22,5 +27,6 @@ jobs:
         with:
           target_branch: output
           build_dir: dist
+          commit_message: "🎨 обновлена змейка коммитов"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
