@@ -6,10 +6,7 @@
 </h1>
 
 <p align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHpmbzZudHRheGk2cTZkdzVhaW84c21ubXptY2ZubWt2YjR5eGJyaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LmNwrBhejkK9EFP504/giphy.gif" width="200" />
-</p>
-<p align="center">
-  <i>This is me when I see another bug in someone else's code</i>
+  <img src="profile-card.svg" width="100%" max-width="850px" alt="Kawaii Developer Profile Card">
 </p>
 
 <p align="center">
@@ -17,42 +14,6 @@
   <img src="https://img.shields.io/badge/STATUS-CODING...-ff69b4?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/COFFEE-☕☕☕-ff69b4?style=for-the-badge" />
 </p>
-
----
-
-## 🐍 Who is this?
-
-```bash
-$ whoami
-———————————————————————————————————————
-
-👩‍💻  Pieswithcabbage
-🏷️  Python Backend Developer | 30 y.o.
-💅  Specialization: FastAPI (main), Django (mistress)
-🎨  Frontend: CSS/HTML (sorry)
-💀  Biggest fear: Merge conflicts on Friday 17:45
-
-
-$ cat skills.json
-———————————————————————————————————————
-
-{
-  "love": ["Python", "FastAPI", "PostgreSQL", "Redis"],
-  "tolerate": ["Django", "Docker", "Git"],
-  "hate": ["GUI-making"],
-  "drinking": ["☕ Coffee"]
-}
-
-
-$ ./deploy --env=production
-———————————————————————————————————————
-
-🚀  Building...
-✅  Tests passed
-✅  Linter smiled
-⚠️  TO DO in code?
-☕  Ready. Do not touch me.
-````
 
 ---
 
