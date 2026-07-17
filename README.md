@@ -1,6 +1,6 @@
 <h1 align="center">
   <img
-    src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=3500&pause=1000&color=00BFFF&center=true&vCenter=true&width=700&lines=Hello%2C+I'm+Pieswithcabbage;RUSSIAN+B*TCH+PROGRAMMER+💅;PYTHON+IS+A+HEART+%7C+FASTAPI+IS+A+SOUL+;Coffee+Powered+Dev" 
+    src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=3500&pause=1000&color=bfa2ff&center=true&vCenter=true&width=700&lines=Hello%2C+I'm+Pieswithcabbage;RUSSIAN+B*TCH+PROGRAMMER+💅;PYTHON+IS+A+HEART+%7C+FASTAPI+IS+A+SOUL+;Coffee+Powered+Dev" 
     alt="Typing animation"
   />
 </h1>
