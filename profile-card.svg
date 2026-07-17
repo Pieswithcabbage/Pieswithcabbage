@@ -1,0 +1,725 @@
+<svg width="980" height="800" viewBox="105 8 980 800" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Kawaii night developer GitHub profile card-v20</title>
+  <desc id="desc">A dark neon profile card with a cute coding cat, badges, terminal whoami block and animated stats bars, micro-polished for GitHub README preview.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="740" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#07101f"/>
+      <stop offset="0.55" stop-color="#111127"/>
+      <stop offset="1" stop-color="#070b18"/>
+    </linearGradient>
+
+    <linearGradient id="card" x1="120" y1="40" x2="1080" y2="720" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#17182f"/>
+      <stop offset="0.55" stop-color="#111225"/>
+      <stop offset="1" stop-color="#16112a"/>
+    </linearGradient>
+
+    <linearGradient id="pinkGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffb7d9"/>
+      <stop offset="1" stop-color="#f06da8"/>
+    </linearGradient>
+
+    <linearGradient id="violetGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d9b7ff"/>
+      <stop offset="1" stop-color="#8c7aff"/>
+    </linearGradient>
+
+    <linearGradient id="cyanGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9eeeff"/>
+      <stop offset="1" stop-color="#65caf5"/>
+    </linearGradient>
+
+    <filter id="outerGlow" x="60" y="0" width="1080" height="830" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="0" stdDeviation="18" flood-color="#ff8bd0" flood-opacity="0.42"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="42" flood-color="#7a74ff" flood-opacity="0.18"/>
+    </filter>
+
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="moonGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#ff9ed3" flood-opacity="0.9"/>
+    </filter>
+
+    <clipPath id="bannerClip">
+      <rect x="210" y="75" width="780" height="315" rx="34"/>
+    </clipPath>
+
+    <style>
+      <![CDATA[
+        .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+        .sans { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+        .twinkle { animation: twinkle 2.6s ease-in-out infinite; transform-origin: center; }
+        .twinkle.s2 { animation-delay: .65s; }
+        .twinkle.s3 { animation-delay: 1.2s; }
+        .pulse { animation: pulse 2.4s ease-in-out infinite; transform-origin: center; }
+        .cursor { animation: blink 1.05s steps(1) infinite; }
+        .bar-fill { transform-box: fill-box; transform-origin: left center; transform: scaleX(0); animation: fillBar 1.8s cubic-bezier(.2,.8,.2,1) forwards; }
+        .bar-fill.b1 { animation-delay: .35s; }
+        .bar-fill.b2 { animation-delay: .6s; }
+        .bar-fill.b3 { animation-delay: .85s; }
+        .pctFinal { opacity: 1; }
+        .countNum { opacity: 0; }
+        .float { animation: float 5.5s ease-in-out infinite; transform-origin: center; }
+        .float2 { animation: float 6.5s ease-in-out infinite reverse; transform-origin: center; }
+        .typing { stroke-dasharray: 560; stroke-dashoffset: 560; animation: draw 3.5s ease forwards; }
+
+        @keyframes fillBar { to { transform: scaleX(1); } }
+        @keyframes blink { 50% { opacity: 0; } }
+        @keyframes pulse { 0%,100% { opacity: .75; transform: scale(1); } 50% { opacity: 1; transform: scale(1.06); } }
+        @keyframes twinkle { 0%,100% { opacity: .35; transform: scale(.88); } 50% { opacity: 1; transform: scale(1.12); } }
+        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+        @keyframes draw { to { stroke-dashoffset: 0; } }
+
+        @media (prefers-reduced-motion: reduce) {
+          .twinkle, .pulse, .cursor, .bar-fill, .float, .float2, .typing { animation: none !important; transform: none !important; opacity: 1 !important; stroke-dashoffset: 0 !important; }
+        }
+                /* Анимации для новой кошки */
+        .cat-head { animation: headTurn 6s ease-in-out infinite; transform-origin: 490px 185px; }
+        .cat-face { animation: faceSlide 6s ease-in-out infinite; transform-origin: 490px 185px; }
+        .cat-ear-l { animation: earMoveL 6s ease-in-out infinite; transform-origin: 450px 135px; }
+        .cat-ear-r { animation: earMoveR 6s ease-in-out infinite; transform-origin: 530px 135px; }
+        .cat-tail { animation: tailWag 2.2s ease-in-out infinite; transform-origin: 470px 320px; }
+
+        @keyframes headTurn {
+          0%, 35%, 85%, 100% { transform: rotate(0deg); }
+          45%, 75% { transform: rotate(4deg); }
+        }
+        @keyframes faceSlide {
+          0%, 35%, 85%, 100% { transform: translateX(35px) scaleX(0); opacity: 0; }
+          45%, 75% { transform: translateX(0px) scaleX(1); opacity: 1; }
+        }
+        @keyframes earMoveL {
+          0%, 35%, 85%, 100% { transform: rotate(0deg); }
+          45%, 75% { transform: rotate(-6deg) translateX(-2px); }
+        }
+        @keyframes earMoveR {
+          0%, 35%, 85%, 100% { transform: rotate(0deg); }
+          45%, 75% { transform: rotate(6deg) translateX(2px); }
+        }
+        @keyframes tailWag {
+          0%, 100% { transform: rotate(0deg); }
+          50% { transform: rotate(-7deg); }
+        }
+                /* Анимация быстрой печати лапками */
+        .cat-paw-l { animation: pawTypeL 0.25s ease-in-out infinite; transform-origin: 460px 245px; }
+        .cat-paw-r { animation: pawTypeR 0.25s ease-in-out infinite; transform-origin: 520px 245px; }
+
+        @keyframes pawTypeL {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-4px) rotate(-3deg); }
+        }
+        @keyframes pawTypeR {
+          0%, 100% { transform: translateY(-4px) rotate(3deg); }
+          50% { transform: translateY(0px) rotate(0deg); }
+        }
+      ]]>
+    </style>
+  </defs>
+
+
+  <g transform="translate(-20 -22) scale(1.03)">
+  <!-- main card -->
+  <rect x="135" y="40" width="930" height="760" rx="46" fill="url(#card)" stroke="#d681c3" stroke-width="1.5"/>
+  <rect x="157" y="64" width="886" height="712" rx="34" stroke="#4c3e72" stroke-width="1" opacity="0.55"/>
+
+  <!-- top banner -->
+  <g clip-path="url(#bannerClip)">
+    <rect x="210" y="75" width="780" height="315" rx="34" fill="#15172c"/>
+    <rect x="210" y="75" width="780" height="315" rx="34" fill="url(#card)" opacity="0.65"/>
+
+    <!-- window -->
+    <rect x="328" y="75" width="150" height="165" fill="#0b1024" opacity="0.8"/>
+    <line x1="392" y1="75" x2="392" y2="240" stroke="#394064"/>
+    <line x1="328" y1="155" x2="478" y2="155" stroke="#394064"/>
+    <circle cx="377" cy="118" r="18" fill="#e6e8ff"/>
+    <circle cx="389" cy="111" r="19" fill="#0b1024"/>
+    <rect x="342" y="192" width="12" height="30" rx="2" fill="#1b2241"/>
+    <rect x="368" y="177" width="14" height="45" rx="2" fill="#22284b"/>
+    <rect x="400" y="202" width="10" height="20" rx="2" fill="#171f3b"/>
+    <rect x="430" y="184" width="15" height="38" rx="2" fill="#1a2140"/>
+    <circle cx="352" cy="198" r="1.5" fill="#ff9dcb"/>
+    <circle cx="373" cy="191" r="1.4" fill="#ffd0e6"/>
+    <circle cx="437" cy="194" r="1.4" fill="#ff9dcb"/>
+
+          <!-- post its (оставлен только верхний стикер) -->
+      <g transform="rotate(-3 282 112)">
+        <rect x="250" y="98" width="62" height="62" rx="3" fill="#ef82b7" opacity="0.72"/>
+        <text x="281" y="125" fill="#2a1831" font-size="16" text-anchor="middle" class="mono">ship</text>
+        <text x="281" y="145" fill="#2a1831" font-size="16" text-anchor="middle" class="mono">it</text>
+      </g>
+
+
+    <!-- shelf -->
+    <rect x="780" y="118" width="150" height="9" rx="4" fill="#5b3e6b" opacity=".7"/>
+    <rect x="875" y="83" width="20" height="35" rx="4" fill="#6d4b82"/>
+    <rect x="900" y="75" width="21" height="43" rx="4" fill="#7b5796"/>
+    <rect x="840" y="88" width="20" height="30" rx="4" fill="#563f6a"/>
+    <circle cx="820" cy="100" r="18" fill="#15151f" stroke="#34233d"/>
+    <path d="M808 84 L814 70 L820 84" fill="#15151f" stroke="#34233d"/>
+    <path d="M824 84 L831 70 L836 86" fill="#15151f" stroke="#34233d"/>
+    <circle cx="814" cy="101" r="2" fill="#ff9fcf"/>
+    <circle cx="826" cy="101" r="2" fill="#ff9fcf"/>
+    <path d="M816 111 Q820 114 824 111" stroke="#ff9fcf" stroke-linecap="round"/>
+
+    <!-- plant -->
+    <rect x="736" y="108" width="40" height="34" rx="6" fill="#634a75"/>
+    <ellipse cx="730" cy="102" rx="13" ry="8" fill="#32405a" transform="rotate(-28 730 102)"/>
+    <ellipse cx="752" cy="94" rx="13" ry="8" fill="#32405a" transform="rotate(18 752 94)"/>
+    <ellipse cx="768" cy="106" rx="13" ry="8" fill="#32405a" transform="rotate(42 768 106)"/>
+    <ellipse cx="744" cy="78" rx="13" ry="8" fill="#2d3851" transform="rotate(-55 744 78)"/>
+    <ellipse cx="771" cy="75" rx="13" ry="8" fill="#2d3851" transform="rotate(38 771 75)"/>
+    <path d="M752 138 C746 170 773 185 752 223" stroke="#394866" stroke-width="4" fill="none" opacity=".9"/>
+
+    <!-- neon moon -->
+    <path class="pulse" d="M894 206 C846 220 844 286 894 299 C862 286 860 220 894 206Z" stroke="#ff9ed3" stroke-width="7" fill="none" stroke-linecap="round" filter="url(#moonGlow)"/>
+
+    <!-- desk -->
+    <path d="M210 330 C360 307 845 310 990 335 L990 390 L210 390Z" fill="#1b1425"/>
+    <line x1="210" y1="330" x2="990" y2="330" stroke="#493258" opacity=".65"/>
+
+        <!-- laptop (объемный, открытый с кодом) -->
+    <g class="float2">
+      <ellipse cx="485" cy="348" rx="140" ry="12" fill="#65caf5" opacity="0.15" filter="url(#softGlow)"/>
+      <path d="M375 220 L595 220 L615 325 L355 325 Z" fill="#1b1b32" stroke="#484f7c" stroke-width="2"/>
+      <path d="M378 223 L592 223 L612 323 L358 323 Z" fill="#0b0c16"/>
+      <!-- Screen Matrix -->
+      <path d="M386 229 L584 229 L602 315 L368 315 Z" fill="#121324" stroke="#65caf5" stroke-width="1" opacity="0.95"/>
+      <rect x="395" y="245" width="60" height="5" rx="1.5" fill="#ff9fcf" opacity="0.8"/>
+      <rect x="395" y="260" width="110" height="5" rx="1.5" fill="#9eeeff" opacity="0.8"/>
+      <rect x="395" y="275" width="80" height="5" rx="1.5" fill="#65caf5" opacity="0.7"/>
+      <!-- Laptop Base & Keyboard -->
+      <path d="M355 325 L615 325 L645 355 L325 355 Z" fill="#22233d" stroke="#484f7c" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M362 329 L608 329 L626 344 L344 344 Z" fill="#121324"/>
+      <path d="M365 332 L605 332 M362 335 L610 335 M354 341 L618 341" stroke="#ff8bd0" stroke-width="1.5" opacity="0.75" filter="url(#softGlow)"/>
+      <path d="M465 346 L505 346 L507 352 L463 352 Z" fill="#1a1b30" stroke="#65caf5" stroke-width="1" opacity="0.9"/>
+    </g>
+
+        <!-- cat sitting in front of laptop -->
+    <g class="float" transform="translate(10, 20)">
+      <!-- Хвост -->
+      <g class="cat-tail">
+        <path d="M470 320 C440 340 410 320 395 290" stroke="#15151f" stroke-width="20" stroke-linecap="round" fill="none"/>
+        <path d="M470 320 C440 340 410 320 395 290" stroke="#3b2944" stroke-width="3" stroke-linecap="round" fill="none"/>
+      </g>
+      
+      <!-- ЧИСТОЕ ГЛАДКОЕ ТЕЛО КОШКИ (вид со спины) -->
+      <path d="M440 330 C430 250 450 220 490 220 C530 220 550 250 540 330 C535 350 445 350 440 330 Z" fill="#15151f" stroke="#3b2944" stroke-width="3"/>
+      
+      <!-- ПЛОСКИЙ ОКУТЫВАЮЩИЙ КОМБИНЕЗОН (без странных выпуклостей) -->
+      <path d="M444 280 C455 260 525 260 536 280 C540 310 530 340 490 340 C450 340 440 310 444 280 Z" fill="#d97cae" stroke="#3b2944" stroke-width="2"/>
+      
+      <!-- Аккуратные ровные лямки, которые идут строго к плечам -->
+      <path d="M455 240 L460 280 M525 240 L520 280" stroke="#3b2944" stroke-width="3.5" stroke-linecap="round"/>
+      
+      <!-- Маленький бантик на пояснице -->
+      <g transform="translate(490, 280)">
+        <path d="M-12 -6 C-16 -14 -4 -14 0 -4 C4 -14 16 -14 12 -6 C6 0 -6 0 -12 -6 Z" fill="#f58fc2" stroke="#5a2f58" stroke-width="1.5"/>
+        <circle cx="0" cy="-4" r="3" fill="#6b3565"/>
+      </g>
+
+            <!-- Передние лапки с анимацией активной печати на клавиатуре -->
+      <path class="cat-paw-l" d="M460 245 C465 225 478 220 478 225 C473 235 468 250 460 245 Z" fill="#15151f" stroke="#3b2944" stroke-width="2"/>
+      <path class="cat-paw-r" d="M520 245 C515 225 502 220 502 225 C507 235 512 250 520 245 Z" fill="#15151f" stroke="#3b2944" stroke-width="2"/>
+
+      
+      <g class="cat-head">
+        <!-- Округлая голова (затылок) -->
+        <path d="M440 185 C430 145 450 125 490 125 C530 125 550 145 540 185 C535 215 445 215 440 185 Z" fill="#15151f" stroke="#3b2944" stroke-width="3"/>
+        
+        <!-- НАСТОЯЩИЕ КОШАЧЬИ УШИ: Широкие в основании и более аккуратные -->
+        <!-- Левое ухо -->
+        <path class="cat-ear-l" d="M442 142 L422 95 C419 88 430 84 436 89 L475 125 Z" fill="#15151f" stroke="#3b2944" stroke-width="3" stroke-linejoin="round"/>
+        <path class="cat-ear-l" d="M448 135 L433 103 L465 121 Z" fill="#f08bb7" opacity=".8"/>
+        
+        <!-- Правое ухо -->
+        <path class="cat-ear-r" d="M538 142 L558 95 C561 88 550 84 544 89 L505 125 Z" fill="#15151f" stroke="#3b2944" stroke-width="3" stroke-linejoin="round"/>
+        <path class="cat-ear-r" d="M532 135 L547 103 L515 121 Z" fill="#f08bb7" opacity=".8"/>
+        
+        <g class="cat-face">
+          <ellipse cx="465" cy="170" rx="14" ry="20" fill="#f3e5ff"/>
+          <ellipse cx="515" cy="170" rx="14" ry="20" fill="#f3e5ff"/>
+          <ellipse cx="467" cy="170" rx="8" ry="12" fill="#27233f"/>
+          <ellipse cx="513" cy="170" rx="8" ry="12" fill="#27233f"/>
+          <circle cx="470" cy="165" r="3.5" fill="#fff"/>
+          <circle cx="516" cy="165" r="3.5" fill="#fff"/>
+          <ellipse cx="450" cy="185" rx="10" ry="6" fill="#ff8fc7" opacity=".6"/>
+          <ellipse cx="530" cy="185" rx="10" ry="6" fill="#ff8fc7" opacity=".6"/>
+          <polygon points="490,182 487,178 493,178" fill="#f094bd"/>
+          <path d="M490 182 Q485 189 480 185" stroke="#3b2944" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path d="M490 182 Q495 189 500 185" stroke="#3b2944" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <line x1="440" y1="185" x2="420" y2="182" stroke="#3b2944" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="440" y1="192" x2="418" y2="194" stroke="#3b2944" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="540" y1="185" x2="560" y2="182" stroke="#3b2944" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="540" y1="192" x2="562" y2="194" stroke="#3b2944" stroke-width="1.5" stroke-linecap="round"/>
+        </g>
+      </g>
+    </g>
+
+
+    <!-- mug and candle -->
+    <g>
+      <!-- Мягкая тень под стаканом -->
+      <ellipse cx="822" cy="362" rx="26" ry="6" fill="#0b0a16" opacity="0.6"/>
+
+      <!-- КРАСИВЫЙ ОБЪЕМНЫЙ СТАКАН С КОФЕ -->
+      <!-- Трубочка -->
+      <path d="M814 276 L808 255 L814 253 L820 274 Z" fill="#9eeeff" stroke="#4c3e72" stroke-width="1"/>
+      <!-- Крышка стакана -->
+      <ellipse cx="822" cy="278" rx="24" ry="7" fill="#ff9fcf" stroke="#5e4070" stroke-width="1.5"/>
+      <rect x="801" y="275" width="42" height="5" rx="2" fill="#ff9fcf" stroke="#5e4070" stroke-width="1.5"/>
+      <!-- Основное тело стакана (коническая форма) -->
+      <path d="M801 278 L807 356 C808 361 813 364 818 364 H826 C831 364 836 361 837 356 L843 278 Z" fill="#272640" stroke="#ff8bd0" stroke-width="2" filter="url(#softGlow)"/>
+      <!-- Задний контур для объема -->
+      <path d="M801 278 C801 284 843 284 843 278" stroke="#ff8bd0" stroke-width="1.5" fill="none"/>
+      
+      <!-- Кавайная круглая эмблема по центру стакана -->
+      <circle cx="822" cy="318" r="15" fill="#151225" stroke="#9eeeff" stroke-width="1"/>
+      <!-- Иконка кошачьей лапки на эмблеме -->
+      <circle cx="822" cy="320" r="4" fill="#9eeeff"/>
+      <circle cx="817" cy="314" r="2" fill="#9eeeff"/>
+      <circle cx="822" cy="311" r="2" fill="#9eeeff"/>
+      <circle cx="827" cy="314" r="2" fill="#9eeeff"/>
+
+      <!-- Идущий от кофе пар -->
+      <path d="M815 245 Q810 235 818 228 T812 215" stroke="#ffbddb" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".5" class="pulse"/>
+      <path d="M828 247 Q833 238 825 231 T830 218" stroke="#ffbddb" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".4" class="pulse" style="animation-delay: 0.5s;"/>
+
+      <!-- Свечка (твой оригинальный код) -->
+      <rect x="896" y="309" width="62" height="52" rx="12" fill="#3f2948" stroke="#ff9bcf" stroke-width="2" opacity=".86"/>
+      <ellipse cx="927" cy="309" rx="31" ry="9" fill="#f6bed8" opacity=".4"/>
+      <path d="M927 300 C912 323 940 323 927 300Z" fill="#fff1c4" filter="url(#softGlow)"/>
+    </g>
+
+
+       <!-- left plant & new cat desk lamp -->
+    <g>
+      <!-- Левый цветок (твоя оригинальная разметка) -->
+      <rect x="242" y="302" width="43" height="37" rx="8" fill="#574165"/>
+      <ellipse cx="246" cy="285" rx="13" ry="31" fill="#273047" transform="rotate(-33 246 285)"/>
+      <ellipse cx="281" cy="282" rx="13" ry="31" fill="#273047" transform="rotate(33 281 282)"/>
+      <ellipse cx="262" cy="260" rx="11" ry="31" fill="#29344e"/>
+      <rect x="296" y="302" width="50" height="30" rx="15" fill="#23142d" stroke="#ff8fc7" stroke-width="4" filter="url(#softGlow)"/>
+      <path d="M303 302 L307 287 L321 302" stroke="#ff8fc7" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <path d="M330 302 L336 287 L343 304" stroke="#ff8fc7" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <rect x="310" y="331" width="22" height="18" rx="5" fill="#5c476b"/>
+
+      <!-- НАСТОЛЬНАЯ ЛАМПА -->
+      <!-- Мягкое неоновое свечение на стол -->
+      <ellipse cx="690" cy="330" rx="75" ry="35" fill="#ffb7d9" opacity="0.12" filter="url(#softGlow)"/>
+      <ellipse cx="715" cy="325" rx="45" ry="20" fill="#8c7aff" opacity="0.10" filter="url(#softGlow)"/>
+      
+      <!-- Подставка лампы -->
+      <ellipse cx="715" cy="336" rx="16" ry="5" fill="#272640" stroke="#5e4070" stroke-width="1.5"/>
+      <!-- Ножка лампы -->
+      <path d="M720 334 Q745 285 710 240" stroke="#5e4070" stroke-width="4" stroke-linecap="round" fill="none"/>
+      
+      <!-- Плафон котика -->
+      <g transform="translate(705, 222)">
+        <path d="M-12 -2 L-18 -14 L-2 0 Z" fill="#ff9fcf" stroke="#5e4070" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M12 -2 L18 -14 L2 0 Z" fill="#ff9fcf" stroke="#5e4070" stroke-width="1.5" stroke-linejoin="round"/>
+        <circle cx="0" cy="5" r="16" fill="#272640" stroke="#ff8bd0" stroke-width="2" filter="url(#softGlow)"/>
+        <circle cx="-6" cy="5" r="1.5" fill="#9eeeff"/>
+        <circle cx="6" cy="5" r="1.5" fill="#9eeeff"/>
+        <path d="M-2 9 Q0 11 2 9" stroke="#9eeeff" stroke-width="1" fill="none"/>
+        <polygon points="-12,17 -65,115 25,115 12,17" fill="url(#pinkGrad)" opacity="0.08" filter="url(#softGlow)"/>
+      </g>
+
+      <!-- ПЕРЕНЕСЁННЫЙ СТИКЕР НА СТЕНУ (СДВИНУТ СИЛЬНЕЕ ВЛЕВО) -->
+      <g transform="translate(-55, 5) rotate(3 650 145)">
+        <rect x="650" y="115" width="72" height="60" rx="4" fill="#b797ff" opacity="0.15" filter="url(#softGlow)"/>
+        <rect x="650" y="115" width="72" height="60" rx="4" fill="#b797ff" opacity="0.78" stroke="#8c7aff" stroke-width="1"/>
+        <text x="686" y="134" fill="#1b1225" font-size="11" font-weight="bold" text-anchor="middle" class="mono">don't</text>
+        <text x="686" y="149" fill="#1b1225" font-size="11" font-weight="bold" text-anchor="middle" class="mono">overthink</text>
+        <text x="686" y="164" fill="#1b1225" font-size="11" font-weight="bold" text-anchor="middle" class="mono">it</text>
+      </g>
+    </g>
+
+
+    <!-- stars -->
+    <text x="708" y="103" fill="#ffb3d7" font-size="22" class="twinkle"></text>
+    <text x="861" y="256" fill="#ffe1ef" font-size="18" class="twinkle s2"></text>
+    <text x="520" y="107" fill="#ffffff" font-size="15" class="twinkle s3"></text>
+    <text x="310" y="216" fill="#ffc5df" font-size="23" class="twinkle s2"></text>
+    <text x="946" y="250" fill="#ffffff" font-size="18" class="twinkle"></text>
+  </g>
+
+  <rect x="210" y="75" width="780" height="315" rx="34" stroke="#d98fcd" stroke-width="1.4"/>
+
+  <!-- caption -->
+  <rect x="420" y="376" width="360" height="28" rx="14" fill="#151225" opacity="0.72"/>
+  <line x1="350" y1="390" x2="410" y2="390" stroke="#d98fcd" stroke-width="1" opacity=".65"/>
+  <text x="600" y="396" fill="#ffe4f1" font-size="18" text-anchor="middle" class="mono" font-style="italic">me at 2am fixing bugs with coffee</text>
+  <line x1="790" y1="390" x2="850" y2="390" stroke="#d98fcd" stroke-width="1" opacity=".65"/>
+
+  <!-- badges -->
+  <g class="sans" font-size="18" font-weight="700">
+    <rect x="250" y="430" width="132" height="43" rx="21.5" fill="url(#pinkGrad)"/>
+    <text x="316" y="458" fill="#25152e" text-anchor="middle">coffee</text>
+    <rect x="407" y="430" width="176" height="43" rx="21.5" fill="url(#violetGrad)"/>
+    <text x="495" y="458" fill="#25152e" text-anchor="middle">debug mode</text>
+    <rect x="608" y="430" width="152" height="43" rx="21.5" fill="#a69aff"/>
+    <text x="684" y="458" fill="#25152e" text-anchor="middle">night owl</text>
+    <rect x="785" y="430" width="170" height="43" rx="21.5" fill="#d7a2fa"/>
+    <text x="870" y="458" fill="#25152e" text-anchor="middle">soft chaos</text>
+  </g>
+
+  <!-- section title -->
+  <text x="190" y="538" fill="#e7a7e1" font-size="34" class="sans" font-weight="800">who am I?</text>
+  <line x1="400" y1="527" x2="980" y2="527" stroke="#8f5f9d" stroke-width="1" stroke-dasharray="4 6" opacity=".65"/>
+  <text x="996" y="535" fill="#d78fd1" font-size="25" class="twinkle"></text>
+
+  <!-- terminal -->
+  <g>
+    <rect x="190" y="550" width="360" height="206" rx="12" fill="#121529" stroke="#91dcff" stroke-width="1.5"/>
+    <circle cx="217" cy="573" r="6" fill="#f08ec1"/>
+    <circle cx="242" cy="573" r="6" fill="#a99cff"/>
+    <circle cx="267" cy="573" r="6" fill="#81d8ff"/>
+    <text x="502" y="579" fill="#caa5ff" font-size="23" class="twinkle"></text>
+    <text x="214" y="615" fill="#83e9ff" font-size="19" class="mono">$ whoami</text>
+    <text x="244" y="645" fill="#f8eefe" font-size="18" class="mono">- backend dev</text>
+    <text x="244" y="672" fill="#f8eefe" font-size="18" class="mono">- python lover</text>
+    <text x="244" y="699" fill="#f8eefe" font-size="18" class="mono">- frontend survivor</text>
+    <text x="244" y="726" fill="#f8eefe" font-size="18" class="mono">- coffee powered</text>
+    <text x="214" y="748" fill="#83e9ff" font-size="19" class="mono">$</text>
+    <rect class="cursor" x="237" y="740" width="13" height="3" rx="1.5" fill="#83e9ff"/>
+  </g>
+
+  <!-- stats -->
+  <g class="sans" font-size="20" font-weight="700">
+    <!-- coffee row -->
+    <g>
+      <g transform="translate(558 576)" filter="url(#softGlow)" opacity=".92">
+        <path d="M9 14 H31 V28 C31 34 27 38 21 38 H19 C13 38 9 34 9 28 Z" fill="none" stroke="#ff9dcb" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M31 18 H39 C46 18 46 32 31 32" fill="none" stroke="#ff9dcb" stroke-width="3" stroke-linecap="round"/>
+        <path d="M15 9 C12 5 18 3 15 -1" stroke="#ffbddb" stroke-width="2" stroke-linecap="round" opacity=".85"/>
+        <path d="M25 9 C22 5 28 3 25 -1" stroke="#ffbddb" stroke-width="2" stroke-linecap="round" opacity=".85"/>
+      </g>
+      <text x="625" y="603" fill="#f8eefe">coffee level</text>
+      <rect x="797" y="585" width="166" height="18" rx="9" fill="#2e2e4d"/>
+      <rect class="bar-fill b1" x="797" y="585" width="159" height="18" rx="9" fill="url(#pinkGrad)"/>
+      <g class="pctCoffee">
+      <text class="pctFinal" x="980" y="603" fill="#ff9dcb">96%<animate attributeName="opacity" values="1;0;0;1" keyTimes="0;0.02;0.97;1" begin="0s" dur="2.05s" fill="freeze"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">0%<set attributeName="opacity" to="1" begin="0.200s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">1%<set attributeName="opacity" to="1" begin="0.219s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">2%<set attributeName="opacity" to="1" begin="0.237s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">3%<set attributeName="opacity" to="1" begin="0.256s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">4%<set attributeName="opacity" to="1" begin="0.274s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">5%<set attributeName="opacity" to="1" begin="0.293s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">6%<set attributeName="opacity" to="1" begin="0.311s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">7%<set attributeName="opacity" to="1" begin="0.330s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">8%<set attributeName="opacity" to="1" begin="0.348s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">9%<set attributeName="opacity" to="1" begin="0.367s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">10%<set attributeName="opacity" to="1" begin="0.386s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">11%<set attributeName="opacity" to="1" begin="0.404s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">12%<set attributeName="opacity" to="1" begin="0.423s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">13%<set attributeName="opacity" to="1" begin="0.441s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">14%<set attributeName="opacity" to="1" begin="0.460s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">15%<set attributeName="opacity" to="1" begin="0.478s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">16%<set attributeName="opacity" to="1" begin="0.497s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">17%<set attributeName="opacity" to="1" begin="0.515s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">18%<set attributeName="opacity" to="1" begin="0.534s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">19%<set attributeName="opacity" to="1" begin="0.553s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">20%<set attributeName="opacity" to="1" begin="0.571s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">21%<set attributeName="opacity" to="1" begin="0.590s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">22%<set attributeName="opacity" to="1" begin="0.608s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">23%<set attributeName="opacity" to="1" begin="0.627s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">24%<set attributeName="opacity" to="1" begin="0.645s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">25%<set attributeName="opacity" to="1" begin="0.664s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">26%<set attributeName="opacity" to="1" begin="0.682s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">27%<set attributeName="opacity" to="1" begin="0.701s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">28%<set attributeName="opacity" to="1" begin="0.720s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">29%<set attributeName="opacity" to="1" begin="0.738s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">30%<set attributeName="opacity" to="1" begin="0.757s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">31%<set attributeName="opacity" to="1" begin="0.775s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">32%<set attributeName="opacity" to="1" begin="0.794s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">33%<set attributeName="opacity" to="1" begin="0.812s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">34%<set attributeName="opacity" to="1" begin="0.831s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">35%<set attributeName="opacity" to="1" begin="0.849s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">36%<set attributeName="opacity" to="1" begin="0.868s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">37%<set attributeName="opacity" to="1" begin="0.887s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">38%<set attributeName="opacity" to="1" begin="0.905s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">39%<set attributeName="opacity" to="1" begin="0.924s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">40%<set attributeName="opacity" to="1" begin="0.942s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">41%<set attributeName="opacity" to="1" begin="0.961s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">42%<set attributeName="opacity" to="1" begin="0.979s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">43%<set attributeName="opacity" to="1" begin="0.998s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">44%<set attributeName="opacity" to="1" begin="1.016s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">45%<set attributeName="opacity" to="1" begin="1.035s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">46%<set attributeName="opacity" to="1" begin="1.054s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">47%<set attributeName="opacity" to="1" begin="1.072s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">48%<set attributeName="opacity" to="1" begin="1.091s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">49%<set attributeName="opacity" to="1" begin="1.109s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">50%<set attributeName="opacity" to="1" begin="1.128s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">51%<set attributeName="opacity" to="1" begin="1.146s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">52%<set attributeName="opacity" to="1" begin="1.165s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">53%<set attributeName="opacity" to="1" begin="1.184s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">54%<set attributeName="opacity" to="1" begin="1.202s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">55%<set attributeName="opacity" to="1" begin="1.221s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">56%<set attributeName="opacity" to="1" begin="1.239s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">57%<set attributeName="opacity" to="1" begin="1.258s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">58%<set attributeName="opacity" to="1" begin="1.276s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">59%<set attributeName="opacity" to="1" begin="1.295s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">60%<set attributeName="opacity" to="1" begin="1.313s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">61%<set attributeName="opacity" to="1" begin="1.332s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">62%<set attributeName="opacity" to="1" begin="1.351s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">63%<set attributeName="opacity" to="1" begin="1.369s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">64%<set attributeName="opacity" to="1" begin="1.388s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">65%<set attributeName="opacity" to="1" begin="1.406s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">66%<set attributeName="opacity" to="1" begin="1.425s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">67%<set attributeName="opacity" to="1" begin="1.443s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">68%<set attributeName="opacity" to="1" begin="1.462s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">69%<set attributeName="opacity" to="1" begin="1.480s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">70%<set attributeName="opacity" to="1" begin="1.499s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">71%<set attributeName="opacity" to="1" begin="1.518s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">72%<set attributeName="opacity" to="1" begin="1.536s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">73%<set attributeName="opacity" to="1" begin="1.555s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">74%<set attributeName="opacity" to="1" begin="1.573s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">75%<set attributeName="opacity" to="1" begin="1.592s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">76%<set attributeName="opacity" to="1" begin="1.610s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">77%<set attributeName="opacity" to="1" begin="1.629s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">78%<set attributeName="opacity" to="1" begin="1.647s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">79%<set attributeName="opacity" to="1" begin="1.666s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">80%<set attributeName="opacity" to="1" begin="1.685s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">81%<set attributeName="opacity" to="1" begin="1.703s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">82%<set attributeName="opacity" to="1" begin="1.722s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">83%<set attributeName="opacity" to="1" begin="1.740s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">84%<set attributeName="opacity" to="1" begin="1.759s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">85%<set attributeName="opacity" to="1" begin="1.777s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">86%<set attributeName="opacity" to="1" begin="1.796s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">87%<set attributeName="opacity" to="1" begin="1.814s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">88%<set attributeName="opacity" to="1" begin="1.833s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">89%<set attributeName="opacity" to="1" begin="1.852s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">90%<set attributeName="opacity" to="1" begin="1.870s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">91%<set attributeName="opacity" to="1" begin="1.889s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">92%<set attributeName="opacity" to="1" begin="1.907s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">93%<set attributeName="opacity" to="1" begin="1.926s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">94%<set attributeName="opacity" to="1" begin="1.944s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">95%<set attributeName="opacity" to="1" begin="1.963s" dur="0.022s"/></text>
+      <text class="countNum" x="980" y="603" fill="#ff9dcb">96%<set attributeName="opacity" to="1" begin="1.981s" dur="0.022s"/></text>
+      </g>
+      <line x1="558" y1="633" x2="964" y2="633" stroke="#3a3150" stroke-dasharray="3 7" opacity=".50"/>
+    </g>
+
+    <!-- coding row -->
+    <g>
+      <g transform="translate(558 648)" filter="url(#softGlow)" opacity=".90">
+        <path d="M18 11 L8 22 L18 33" fill="none" stroke="#bfa2ff" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M30 11 L40 22 L30 33" fill="none" stroke="#bfa2ff" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M27 9 L21 35" fill="none" stroke="#d5c2ff" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+      <text x="625" y="675" fill="#f8eefe">coding mood</text>
+      <rect x="797" y="657" width="166" height="18" rx="9" fill="#2e2e4d"/>
+      <rect class="bar-fill b2" x="797" y="657" width="146" height="18" rx="9" fill="url(#violetGrad)"/>
+      <g class="pctCoding">
+      <text class="pctFinal" x="980" y="675" fill="#bfa2ff">88%<animate attributeName="opacity" values="1;0;0;1" keyTimes="0;0.02;0.97;1" begin="0s" dur="2.05s" fill="freeze"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">0%<set attributeName="opacity" to="1" begin="0.300s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">1%<set attributeName="opacity" to="1" begin="0.319s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">2%<set attributeName="opacity" to="1" begin="0.338s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">3%<set attributeName="opacity" to="1" begin="0.357s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">4%<set attributeName="opacity" to="1" begin="0.376s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">5%<set attributeName="opacity" to="1" begin="0.396s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">6%<set attributeName="opacity" to="1" begin="0.415s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">7%<set attributeName="opacity" to="1" begin="0.434s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">8%<set attributeName="opacity" to="1" begin="0.453s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">9%<set attributeName="opacity" to="1" begin="0.472s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">10%<set attributeName="opacity" to="1" begin="0.491s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">11%<set attributeName="opacity" to="1" begin="0.510s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">12%<set attributeName="opacity" to="1" begin="0.529s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">13%<set attributeName="opacity" to="1" begin="0.548s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">14%<set attributeName="opacity" to="1" begin="0.567s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">15%<set attributeName="opacity" to="1" begin="0.587s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">16%<set attributeName="opacity" to="1" begin="0.606s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">17%<set attributeName="opacity" to="1" begin="0.625s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">18%<set attributeName="opacity" to="1" begin="0.644s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">19%<set attributeName="opacity" to="1" begin="0.663s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">20%<set attributeName="opacity" to="1" begin="0.682s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">21%<set attributeName="opacity" to="1" begin="0.701s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">22%<set attributeName="opacity" to="1" begin="0.720s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">23%<set attributeName="opacity" to="1" begin="0.739s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">24%<set attributeName="opacity" to="1" begin="0.758s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">25%<set attributeName="opacity" to="1" begin="0.778s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">26%<set attributeName="opacity" to="1" begin="0.797s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">27%<set attributeName="opacity" to="1" begin="0.816s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">28%<set attributeName="opacity" to="1" begin="0.835s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">29%<set attributeName="opacity" to="1" begin="0.854s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">30%<set attributeName="opacity" to="1" begin="0.873s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">31%<set attributeName="opacity" to="1" begin="0.892s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">32%<set attributeName="opacity" to="1" begin="0.911s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">33%<set attributeName="opacity" to="1" begin="0.930s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">34%<set attributeName="opacity" to="1" begin="0.949s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">35%<set attributeName="opacity" to="1" begin="0.969s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">36%<set attributeName="opacity" to="1" begin="0.988s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">37%<set attributeName="opacity" to="1" begin="1.007s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">38%<set attributeName="opacity" to="1" begin="1.026s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">39%<set attributeName="opacity" to="1" begin="1.045s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">40%<set attributeName="opacity" to="1" begin="1.064s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">41%<set attributeName="opacity" to="1" begin="1.083s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">42%<set attributeName="opacity" to="1" begin="1.102s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">43%<set attributeName="opacity" to="1" begin="1.121s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">44%<set attributeName="opacity" to="1" begin="1.140s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">45%<set attributeName="opacity" to="1" begin="1.160s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">46%<set attributeName="opacity" to="1" begin="1.179s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">47%<set attributeName="opacity" to="1" begin="1.198s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">48%<set attributeName="opacity" to="1" begin="1.217s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">49%<set attributeName="opacity" to="1" begin="1.236s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">50%<set attributeName="opacity" to="1" begin="1.255s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">51%<set attributeName="opacity" to="1" begin="1.274s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">52%<set attributeName="opacity" to="1" begin="1.293s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">53%<set attributeName="opacity" to="1" begin="1.312s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">54%<set attributeName="opacity" to="1" begin="1.331s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">55%<set attributeName="opacity" to="1" begin="1.351s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">56%<set attributeName="opacity" to="1" begin="1.370s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">57%<set attributeName="opacity" to="1" begin="1.389s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">58%<set attributeName="opacity" to="1" begin="1.408s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">59%<set attributeName="opacity" to="1" begin="1.427s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">60%<set attributeName="opacity" to="1" begin="1.446s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">61%<set attributeName="opacity" to="1" begin="1.465s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">62%<set attributeName="opacity" to="1" begin="1.484s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">63%<set attributeName="opacity" to="1" begin="1.503s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">64%<set attributeName="opacity" to="1" begin="1.522s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">65%<set attributeName="opacity" to="1" begin="1.542s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">66%<set attributeName="opacity" to="1" begin="1.561s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">67%<set attributeName="opacity" to="1" begin="1.580s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">68%<set attributeName="opacity" to="1" begin="1.599s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">69%<set attributeName="opacity" to="1" begin="1.618s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">70%<set attributeName="opacity" to="1" begin="1.637s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">71%<set attributeName="opacity" to="1" begin="1.656s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">72%<set attributeName="opacity" to="1" begin="1.675s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">73%<set attributeName="opacity" to="1" begin="1.694s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">74%<set attributeName="opacity" to="1" begin="1.713s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">75%<set attributeName="opacity" to="1" begin="1.733s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">76%<set attributeName="opacity" to="1" begin="1.752s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">77%<set attributeName="opacity" to="1" begin="1.771s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">78%<set attributeName="opacity" to="1" begin="1.790s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">79%<set attributeName="opacity" to="1" begin="1.809s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">80%<set attributeName="opacity" to="1" begin="1.828s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">81%<set attributeName="opacity" to="1" begin="1.847s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">82%<set attributeName="opacity" to="1" begin="1.866s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">83%<set attributeName="opacity" to="1" begin="1.885s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">84%<set attributeName="opacity" to="1" begin="1.904s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">85%<set attributeName="opacity" to="1" begin="1.924s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">86%<set attributeName="opacity" to="1" begin="1.943s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">87%<set attributeName="opacity" to="1" begin="1.962s" dur="0.023s"/></text>
+      <text class="countNum" x="980" y="675" fill="#bfa2ff">88%<set attributeName="opacity" to="1" begin="1.981s" dur="0.023s"/></text>
+      </g>
+      <line x1="558" y1="705" x2="964" y2="705" stroke="#3a3150" stroke-dasharray="3 7" opacity=".50"/>
+    </g>
+
+    <!-- chaos row -->
+    <g>
+      <g transform="translate(558 720)" filter="url(#softGlow)" opacity=".90">
+        <path d="M22 5 L27 17 L40 18 L30 27 L33 40 L22 33 L11 40 L14 27 L4 18 L17 17 Z" fill="none" stroke="#82e7ff" stroke-width="2.9" stroke-linejoin="round"/>
+      </g>
+      <text x="625" y="747" fill="#f8eefe">chaos control</text>
+      <rect x="797" y="729" width="166" height="18" rx="9" fill="#2e2e4d"/>
+      <rect class="bar-fill b3" x="797" y="729" width="121" height="18" rx="9" fill="url(#cyanGrad)"/>
+      <g class="pctChaos">
+      <text class="pctFinal" x="980" y="747" fill="#82e7ff">73%<animate attributeName="opacity" values="1;0;0;1" keyTimes="0;0.02;0.97;1" begin="0s" dur="2.00s" fill="freeze"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">0%<set attributeName="opacity" to="1" begin="0.400s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">1%<set attributeName="opacity" to="1" begin="0.421s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">2%<set attributeName="opacity" to="1" begin="0.442s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">3%<set attributeName="opacity" to="1" begin="0.463s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">4%<set attributeName="opacity" to="1" begin="0.484s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">5%<set attributeName="opacity" to="1" begin="0.505s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">6%<set attributeName="opacity" to="1" begin="0.526s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">7%<set attributeName="opacity" to="1" begin="0.547s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">8%<set attributeName="opacity" to="1" begin="0.568s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">9%<set attributeName="opacity" to="1" begin="0.589s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">10%<set attributeName="opacity" to="1" begin="0.609s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">11%<set attributeName="opacity" to="1" begin="0.630s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">12%<set attributeName="opacity" to="1" begin="0.651s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">13%<set attributeName="opacity" to="1" begin="0.672s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">14%<set attributeName="opacity" to="1" begin="0.693s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">15%<set attributeName="opacity" to="1" begin="0.714s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">16%<set attributeName="opacity" to="1" begin="0.735s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">17%<set attributeName="opacity" to="1" begin="0.756s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">18%<set attributeName="opacity" to="1" begin="0.777s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">19%<set attributeName="opacity" to="1" begin="0.798s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">20%<set attributeName="opacity" to="1" begin="0.819s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">21%<set attributeName="opacity" to="1" begin="0.840s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">22%<set attributeName="opacity" to="1" begin="0.861s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">23%<set attributeName="opacity" to="1" begin="0.882s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">24%<set attributeName="opacity" to="1" begin="0.903s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">25%<set attributeName="opacity" to="1" begin="0.924s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">26%<set attributeName="opacity" to="1" begin="0.945s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">27%<set attributeName="opacity" to="1" begin="0.966s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">28%<set attributeName="opacity" to="1" begin="0.986s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">29%<set attributeName="opacity" to="1" begin="1.007s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">30%<set attributeName="opacity" to="1" begin="1.028s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">31%<set attributeName="opacity" to="1" begin="1.049s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">32%<set attributeName="opacity" to="1" begin="1.070s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">33%<set attributeName="opacity" to="1" begin="1.091s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">34%<set attributeName="opacity" to="1" begin="1.112s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">35%<set attributeName="opacity" to="1" begin="1.133s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">36%<set attributeName="opacity" to="1" begin="1.154s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">37%<set attributeName="opacity" to="1" begin="1.175s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">38%<set attributeName="opacity" to="1" begin="1.196s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">39%<set attributeName="opacity" to="1" begin="1.217s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">40%<set attributeName="opacity" to="1" begin="1.238s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">41%<set attributeName="opacity" to="1" begin="1.259s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">42%<set attributeName="opacity" to="1" begin="1.280s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">43%<set attributeName="opacity" to="1" begin="1.301s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">44%<set attributeName="opacity" to="1" begin="1.322s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">45%<set attributeName="opacity" to="1" begin="1.343s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">46%<set attributeName="opacity" to="1" begin="1.364s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">47%<set attributeName="opacity" to="1" begin="1.384s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">48%<set attributeName="opacity" to="1" begin="1.405s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">49%<set attributeName="opacity" to="1" begin="1.426s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">50%<set attributeName="opacity" to="1" begin="1.447s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">51%<set attributeName="opacity" to="1" begin="1.468s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">52%<set attributeName="opacity" to="1" begin="1.489s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">53%<set attributeName="opacity" to="1" begin="1.510s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">54%<set attributeName="opacity" to="1" begin="1.531s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">55%<set attributeName="opacity" to="1" begin="1.552s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">56%<set attributeName="opacity" to="1" begin="1.573s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">57%<set attributeName="opacity" to="1" begin="1.594s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">58%<set attributeName="opacity" to="1" begin="1.615s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">59%<set attributeName="opacity" to="1" begin="1.636s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">60%<set attributeName="opacity" to="1" begin="1.657s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">61%<set attributeName="opacity" to="1" begin="1.678s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">62%<set attributeName="opacity" to="1" begin="1.699s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">63%<set attributeName="opacity" to="1" begin="1.720s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">64%<set attributeName="opacity" to="1" begin="1.741s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">65%<set attributeName="opacity" to="1" begin="1.761s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">66%<set attributeName="opacity" to="1" begin="1.782s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">67%<set attributeName="opacity" to="1" begin="1.803s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">68%<set attributeName="opacity" to="1" begin="1.824s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">69%<set attributeName="opacity" to="1" begin="1.845s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">70%<set attributeName="opacity" to="1" begin="1.866s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">71%<set attributeName="opacity" to="1" begin="1.887s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">72%<set attributeName="opacity" to="1" begin="1.908s" dur="0.025s"/></text>
+      <text class="countNum" x="980" y="747" fill="#82e7ff">73%<set attributeName="opacity" to="1" begin="1.929s" dur="0.025s"/></text>
+      </g>
+    </g>
+  </g>
+
+  <!-- footer ornament -->
+  <path class="pulse" d="M600 795 C583 783 572 772 578 761 C584 752 596 755 600 766 C604 755 616 752 622 761 C628 772 617 783 600 795Z" fill="none" stroke="#ff9dcb" stroke-width="4" stroke-linejoin="round" filter="url(#softGlow)"/>
+  <circle cx="493" cy="779" r="3" fill="#ff9dcb"/>
+  <circle cx="530" cy="779" r="2" fill="#d9b7ff"/>
+  <circle cx="560" cy="779" r="2" fill="#d9b7ff"/>
+  <circle cx="640" cy="779" r="2" fill="#d9b7ff"/>
+  <circle cx="670" cy="779" r="2" fill="#d9b7ff"/>
+  <circle cx="707" cy="779" r="3" fill="#ff9dcb"/>
+
+  <!-- corner decor -->
+  <g class="twinkle s2" stroke="#ff9dcb" stroke-width="2" stroke-linecap="round"><path d="M185 444 V458 M178 451 H192"/></g>
+  <g class="twinkle s3" stroke="#ff9dcb" stroke-width="1.6" stroke-linecap="round" opacity=".7"><path d="M1006 446 V458 M1000 452 H1012"/></g>
+  <g class="twinkle s2" stroke="#d8b6ff" stroke-width="1.8" stroke-linecap="round" opacity="0.8"><path d="M980 100 V116 M972 108 H988"/></g>
+  <!-- extra soft stars for v3 polish -->
+  <g opacity="0.8">
+    <path class="twinkle" d="M310 505 V517 M304 511 H316" stroke="#ffd1e7" stroke-width="1.6" stroke-linecap="round"/>
+    
+    <circle class="twinkle s3" cx="872" cy="462" r="2.2" fill="#ffd1e7"/>
+    <circle class="twinkle" cx="430" cy="490" r="1.6" fill="#9eeeff"/>
+  </g>
+
+  </g>
+</svg>
